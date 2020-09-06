@@ -1,3 +1,54 @@
-<p>
-  header works!
-</p>
+<header class="header-container">
+  <nav class="navigation-menu">
+    <div class="mobile-menu">
+      <button mat-button [matMenuTriggerFor]="menuToggle" class="position-relative mobile-menu__btn" data-count="10">
+        <img src="../../../assets/images/icons/icon.png" width="20" alt="">
+      </button>
+      <mat-menu #menuToggle="matMenu" xPosition="after" class="notification-dropdown">
+        <ul class="menu">
+          <li class="menu__item"><a routerLink="" class="menu__item__link">ROULETTE</a></li>
+          <li class="menu__item"><a routerLink="" class="menu__item__link">JACKPOTS</a></li>
+          <li class="menu__item"><a routerLink="" class="menu__item__link">COINFLIP</a></li>
+          <li class="menu__item"><a routerLink="" class="menu__item__link">MYSTERY</a></li>
+          <li class="menu__item"><a routerLink="" class="menu__item__link"> BOXRAFFLE</a></li>
+        </ul>
+      </mat-menu>
+    </div>
+    <ul class="menu">
+      <li class="menu__item"><a routerLink="" class="menu__item__link">ROULETTE</a></li>
+      <li class="menu__item"><a routerLink="" class="menu__item__link">JACKPOTS</a></li>
+      <li class="menu__item"><a routerLink="" class="menu__item__link">COINFLIP</a></li>
+      <li class="menu__item"><a routerLink="" class="menu__item__link">MYSTERY</a></li>
+      <li class="menu__item"><a routerLink="" class="menu__item__link"> BOXRAFFLE</a></li>
+    </ul>
+    <ul class="profile">
+      <li>
+        <button mat-button [matMenuTriggerFor]="beforeMenu" class="notification position-relative" data-count="10">
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before" class="notification-dropdown">
+          <h3 class="notification-dropdown__title">You have 10 notifications</h3>
+          <p class="notification-dropdown__count">5 new members joined today</p>
+          <ul class="notification-dropdown__list">
+            <!--TODO add one of this classes "error" "pending" "success" "blue" define of notification type-->
+            <li class="notification-dropdown__list__item text-ellipsis error">Very long description here that may</li>
+            <li class="notification-dropdown__list__item text-ellipsis pending">5 new members joined today</li>
+            <li class="notification-dropdown__list__item text-ellipsis success">Very long description here that may</li>
+            <li class="notification-dropdown__list__item text-ellipsis blue">5 new members joined today</li>
+          </ul>
+        </mat-menu>
+      </li>
+      <li>
+        <a href="" class="user">
+          <figure class="user__image"><img src="" alt=""></figure>
+          <span class="user__name">KIRILL TRIPLE KILL</span>
+        </a>
+      </li>
+      <li>
+        <a href="" class="exit">
+          <img src="../../../assets/images/icons/exit.png" alt="">
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+

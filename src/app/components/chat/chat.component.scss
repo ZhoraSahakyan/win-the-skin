@@ -1,0 +1,158 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+::ng-deep {
+  app-chat {
+    @include display(block);
+    height: 100%;
+  }
+}
+
+.chat-container {
+  background: $sidebar-bg;
+  height: inherit;
+  .chat-toggle {
+    width: 0;
+    transition: all .3s;
+    overflow: hidden;
+    height: inherit;
+    &.open {
+      width: 300px;
+    }
+    @media all and (max-width: 1200px) {
+      &.open {
+        width: 200px;
+      }
+    }
+  }
+  &__btn {
+    @include button-style($chat-toggle, $sidebar-bg, $chat-toggle, $sidebar-bg, transparent);
+    @include border-radius(10px, 0, 0, 10px);
+    padding: 20px 10px;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    z-index: 50;
+    cursor: pointer;
+    &__icon {
+      @include display(block);
+      border-right: 1px solid $chat-toggle;
+      border-left: 1px solid $chat-toggle;
+      height: 15px;
+      &::before {
+        @include display(block);
+        content: '';
+        height: 100%;
+        border-left: 1px solid $chat-toggle;
+        margin: 0 5px;
+      }
+    }
+    &::after,
+    &::before {
+      display: block;
+      content: '';
+      width: 0;
+      height: 0;
+      right: -2px;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid $sidebar-bg;
+      position: absolute;
+    }
+    &::before {
+      top: -11px;
+    }
+    &:after {
+      bottom: -11px;
+    }
+  }
+  @media all and (max-width: 992px) {
+    position: absolute;
+    right: 0;
+    z-index: 40;
+  }
+}
+
+.chat {
+  padding: 0 20px;
+  width: 300px;
+  @media all and (max-width: 1200px) {
+    width: 200px;
+  }
+  &__item {
+    &:first-of-type {
+      background: $white-opacity;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+    }
+    &__title {
+      @extend %roboto-bold;
+      padding: 15px;
+      @include text-transform(uppercase);
+      font-size: 1rem;
+    }
+    &:not(:first-of-type) {
+      @include display(grid);
+      @include grid-template-columns(45px 1fr);
+      border-bottom: 1px solid $white-border;
+      padding: 10px 0;
+    }
+  }
+}
+
+.image-container {
+  @include size(45px);
+  background: $aside-item-hover;
+  &__img {
+    @include size(inherit);
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.info {
+  padding: 0 15px;
+  &__name, &__desc {
+    font-size: 1rem;
+  }
+  &__date {
+    @include display(block);
+    font-size: .9rem;
+    color: $yellow;
+    margin: 10px 0;
+  }
+}
+
+.message {
+  padding: 10px 20px;
+  width: 300px;
+  @media all and (max-width: 1200px) {
+    width: 200px;
+  }
+  .buttons {
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include display(grid);
+    @include grid-template-columns(auto auto);
+  }
+  .btn-container {
+    @include align-items(inherit);
+    @include justify-content(inherit);
+    @include display(inherit);
+    @include grid-template-columns(25px 25px);
+
+  }
+  &__text {
+    @include display(block);
+    @include size(100%, 50px);
+    resize: none;
+    border: none;
+    background: $chat-bg;
+    padding: 10px 20px 0;
+    color: $white;
+  }
+  &__btn {
+    @include button-style($white, transparent);
+    cursor: pointer;
+  }
+}

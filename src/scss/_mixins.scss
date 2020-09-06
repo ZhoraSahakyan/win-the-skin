@@ -1,0 +1,54 @@
+@mixin size($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin button-style($color,$bg,$hover-color:$color,$hover-bg:$bg,$border-color:$bg) {
+  color: $color;
+  background-color: $bg;
+  border-color: $border-color;
+  &:hover {
+    color: $hover-color;
+    background-color: $hover-bg;
+  }
+}
+
+@mixin display($display) {
+  display: $display;
+}
+
+//text transform
+
+@mixin text-transform($transform) {
+  text-transform: $transform;
+}
+
+@mixin grid-template-columns($count) {
+  grid-template-columns: $count
+}
+
+@mixin justify-content($alignment) {
+  justify-content: $alignment
+}
+
+@mixin align-items($alignment) {
+  align-items: $alignment
+}
+
+@mixin border-radius($left-top:0, $right-top:0, $right-bottom:0, $left-bottom:0) {
+  border-radius: $left-top $right-top $right-bottom $left-bottom;
+}
+
+@mixin list-type($color) {
+  .table__body__item:last-of-type {
+    @include display(grid);
+    @include grid-template-columns(25px auto);
+    color: $color;
+    &::before {
+      @include size(15px);
+      @include display(inline-block);
+      margin-right: 10px;
+      content: '';
+    }
+  }
+}

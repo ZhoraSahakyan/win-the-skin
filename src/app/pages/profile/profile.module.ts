@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import {ProfilePageComponent} from './profile-page/profile-page.component';
 
@@ -12,7 +13,8 @@ const profileRoutes: Routes = [
   declarations: [ProfilePageComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(profileRoutes)
+    RouterModule.forChild(profileRoutes),
+    MatTabsModule
   ]
 })
 export class ProfileModule {

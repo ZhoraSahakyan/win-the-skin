@@ -1,0 +1,27 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.afford {
+  @include display(grid);
+  @include grid-template-columns(auto auto);
+  @include justify-content(space-between);
+  @include text-transform(uppercase);
+  padding: 15px 20px;
+  background: $aside-item-hover;
+  &__title {
+    @extend %roboto-bold;
+    font-size: 1rem;
+  }
+  &__count {
+    color: $sidebar-text;
+  }
+}
+
+.afford-list {
+  padding: 15px 20px;
+  @include display(grid);
+  @include grid-template-columns(1fr 1fr 1fr);
+  grid-gap: 20px 10px;
+}
+

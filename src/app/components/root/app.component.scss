@@ -1,0 +1,40 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.main-container {
+  @include display(grid);
+  @include grid-template-columns(300px 1fr);
+  min-height: 100vh;
+  background: url('../../../assets/images/bg.jpg') no-repeat center;
+  background-size: 100%;
+  &__sidebar {
+    grid-row: 1 / 4;
+  }
+  &__content {
+    @include display(grid);
+    @include grid-template-columns(1fr auto);
+    min-height: calc(100vh - 65.200px);
+    max-height: calc(100vh - 65.200px);
+    overflow: hidden;
+  }
+  &__sidebar {
+    width: 300px;
+    background: $sidebar-bg;
+  }
+  @media all and (max-width: 1200px) {
+    @include grid-template-columns(200px 1fr);
+    &__sidebar {
+      width: 200px;
+    }
+  }
+  @media all and (max-width: 920px) {
+    @include display(block);
+    &__sidebar {
+      width: 200px;
+      position: absolute;
+      z-index: 40;
+      top: 75px;
+      max-width: 100%;
+    }
+  }
+}

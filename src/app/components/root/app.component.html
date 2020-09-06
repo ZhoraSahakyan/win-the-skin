@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<main class="main-container">
+  <aside class="main-container__sidebar">
+    <app-left-sidebar></app-left-sidebar>
+  </aside>
+  <app-header class="main-container__header"></app-header>
+
+  <section class="main-container__content">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+    <aside  class="main-container__chat">
+      <app-chat></app-chat>
+    </aside>
+
+  </section>
+</main>
+
+
