@@ -1,11 +1,11 @@
 <main class="main-container">
-  <aside class="main-container__sidebar">
+  <aside class="main-container__sidebar position-relative">
     <app-left-sidebar></app-left-sidebar>
   </aside>
   <app-header class="main-container__header"></app-header>
 
   <section class="main-container__content">
-    <div>
+    <div slimScroll class="scroll">
       <router-outlet></router-outlet>
     </div>
     <aside  class="main-container__chat">

@@ -38,6 +38,9 @@
     .mat-tab-labels {
       @include justify-content(center);
     }
+    .mat-tab-body-content {
+      height: auto;
+    }
     .mat-tab-nav-bar, .mat-tab-header {
       border-bottom: none;
       background: $aside-item-hover;
@@ -187,7 +190,6 @@
         overflow: hidden;
         > div {
           @include display(grid);
-          //@include grid-template-columns(repeat(auto-fill, minmax(50px, 1fr)));
           grid-auto-flow: column;
           grid-column-gap: 8px;
         }

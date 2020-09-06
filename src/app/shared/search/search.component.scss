@@ -4,8 +4,8 @@
 
 .search {
   @include input-style;
-  width: 200px;
-  &__input{
+  margin:20px 0 15px;
+  &__input {
     width: 100%;
     padding-right: 30px;
   }

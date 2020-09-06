@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
 import {TopPageComponent} from './top-page/top-page.component';
+import {SharedModule} from "../../shared/shared.module";
 
 
 const topRoutes: Routes = [
@@ -13,7 +14,8 @@ const topRoutes: Routes = [
   declarations: [TopPageComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(topRoutes)
+    RouterModule.forChild(topRoutes),
+    SharedModule
   ]
 })
 export class TopModule {

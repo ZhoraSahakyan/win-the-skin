@@ -11,6 +11,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
 import { AffordBlockComponent } from './components/afford-block/afford-block.component';
 import {SharedModule} from './shared/shared.module';
+import {ISlimScrollOptions, NgSlimScrollModule, SLIMSCROLL_DEFAULTS} from 'ngx-slimscroll';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,17 @@ import {SharedModule} from './shared/shared.module';
     BrowserAnimationsModule,
     MatMenuModule,
     SharedModule,
+    NgSlimScrollModule,
   ],
-  providers: [],
+  providers: [
+    // OPTIONAL : provide default global settings which will be merge with component options.
+    {
+      provide: SLIMSCROLL_DEFAULTS,
+      useValue: {
+        alwaysVisible : false
+      } as ISlimScrollOptions
+    },
+  ],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

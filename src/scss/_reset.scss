@@ -17,6 +17,7 @@ html, body {
   height: 100vh;
   color: $white;
   font-size: $core-fz;
+  overflow: hidden;
   @media all and (max-width: 1200px) {
     font-size: $small-fz;
   }
@@ -41,4 +42,20 @@ html, body {
 .sub-header {
   background: $aside-item-hover;
   padding: 15px;
+}
+
+
+
+.select-container {
+  background: $select-bg;
+  margin-bottom: 20px;
+  &__header {
+    @extend %roboto-bold;
+    background: $select-header;
+    padding: 20px 25px;
+  }
+}
+
+.select {
+  padding: 15px 25px;
 }

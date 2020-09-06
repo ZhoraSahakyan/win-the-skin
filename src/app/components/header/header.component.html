@@ -8,7 +8,8 @@
         <ul class="menu">
           <li class="menu__item"><a routerLink="" class="menu__item__link">ROULETTE</a></li>
           <li class="menu__item"><a routerLink="" class="menu__item__link">JACKPOTS</a></li>
-          <li class="menu__item"><a routerLink="" class="menu__item__link">COINFLIP</a></li>
+          <li class="menu__item"><a routerLink="" class="menu__item__link" routerLink="./top" routerLinkActive="active">COINFLIP</a>
+          </li>
           <li class="menu__item"><a routerLink="" class="menu__item__link">MYSTERY</a></li>
           <li class="menu__item"><a routerLink="" class="menu__item__link"> BOXRAFFLE</a></li>
         </ul>
@@ -17,7 +18,7 @@
     <ul class="menu">
       <li class="menu__item"><a routerLink="" class="menu__item__link">ROULETTE</a></li>
       <li class="menu__item"><a routerLink="" class="menu__item__link">JACKPOTS</a></li>
-      <li class="menu__item"><a routerLink="" class="menu__item__link">COINFLIP</a></li>
+      <li class="menu__item"><a routerLink="./top" routerLinkActive="active" class="menu__item__link">COINFLIP</a></li>
       <li class="menu__item"><a routerLink="" class="menu__item__link">MYSTERY</a></li>
       <li class="menu__item"><a routerLink="" class="menu__item__link"> BOXRAFFLE</a></li>
     </ul>
@@ -38,10 +39,7 @@
         </mat-menu>
       </li>
       <li>
-        <a href="" class="user">
-          <figure class="user__image"><img src="" alt=""></figure>
-          <span class="user__name">KIRILL TRIPLE KILL</span>
-        </a>
+        <app-user-profile></app-user-profile>
       </li>
       <li>
         <a href="" class="exit">

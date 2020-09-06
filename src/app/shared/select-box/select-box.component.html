@@ -1,3 +1,13 @@
 <div class="select-container">
   <header class="select-container__header">Качество</header>
+  <div class="select">
+    <ng-select [items]="items"
+               bindLabel="name"
+               placeholder="Select item"
+               appendTo="body"
+               multiple="true"
+               [(ngModel)]="selected">
+    </ng-select>
+  </div>
+
 </div>

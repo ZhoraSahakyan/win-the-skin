@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-box.component.scss']
 })
 export class SelectBoxComponent implements OnInit {
-
+  items = [
+    {id: 5, name: 'Django'},
+    {id: 6, name: 'Angular'},
+    {id: 7, name: 'Vue'},
+    {id: 8, name: 'ReactJs'},
+  ];
+  selected = [
+    {id: 2, name: 'Node Js'},
+    {id: 8, name: 'ReactJs'}
+  ];
   constructor() { }
 
   ngOnInit(): void {

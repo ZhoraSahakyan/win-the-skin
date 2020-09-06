@@ -2,6 +2,20 @@
 @import '../../../scss/mixins';
 @import '../../../scss/fonts';
 
+.chat{
+  min-height: calc(100vh - 220px);
+  max-height: calc(100vh - 220px);
+
+  &__title {
+    @extend %roboto-bold;
+    @include text-transform(uppercase);
+    font-size: 1rem;
+    background: #2e2f3d;
+    width: calc(100%);
+    padding:15px 20px;
+  }
+}
+
 ::ng-deep {
   app-chat {
     @include display(block);
@@ -80,18 +94,7 @@
     width: 200px;
   }
   &__item {
-    &:first-of-type {
-      background: $white-opacity;
-      width: calc(100% + 40px);
-      margin-left: -20px;
-    }
-    &__title {
-      @extend %roboto-bold;
-      padding: 15px;
-      @include text-transform(uppercase);
-      font-size: 1rem;
-    }
-    &:not(:first-of-type) {
+    & {
       @include display(grid);
       @include grid-template-columns(45px 1fr);
       border-bottom: 1px solid $white-border;

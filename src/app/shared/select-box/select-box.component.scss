@@ -1,11 +1,74 @@
 @import '../../../scss/variables';
 @import '../../../scss/mixins';
 @import '../../../scss/fonts';
-.select-container {
-  background: $select-bg;
-  &__header {
-    @extend %roboto-bold;
-    background: $select-header;
-    padding: 20px 25px;
+
+::ng-deep {
+  .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container,
+  .ng-select .ng-select-container {
+    background: $select-box-bg;
+    border: 1px solid $select-box-bg;
+    border-right: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+  .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+    background: #344a5b;
+    color: $white;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 5px 10px;
+  }
+  .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon.left,
+  .ng-dropdown-panel.ng-select-bottom {
+    border: none
+  }
+  .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon:hover {
+    background: transparent;
+  }
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked,
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option,
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+    @extend %roboto-light;
+    background: #302f39;
+    color: $white;
+    font-size: 13px;
+  }
+  .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {
+    background: #302f39;
+  }
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected .ng-option-label, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked .ng-option-label {
+    font-weight: normal;
+  }
+  .ng-option {
+
+  }
+  .ng-option {
+    padding: 0 20px;
+    &:not(:last-child) {
+      > span {
+        border-bottom: 1px solid $white-border !important;
+      }
+    }
+    > span {
+      @include display(block);
+      padding: 15px;
+    }
+  }
+  .ng-select .ng-arrow-wrapper {
+    background: url('../../../assets/images/icons/arrow-down.png') no-repeat center;
+    background-size: 8px auto;
+    transform: rotate(180deg);
+    .ng-arrow {
+      visibility: hidden
+    }
+  }
+  .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder{
+     font-size: 13px;
+      color: #fff;
+      padding: 0;
+      transform: translateY(-50%);
+      top: 50%;
   }
 }

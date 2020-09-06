@@ -17,9 +17,16 @@
     max-height: calc(100vh - 65.200px);
     overflow: hidden;
   }
+  .scroll{
+    min-height: calc(100vh - 65.200px);
+    max-height: calc(100vh - 65.200px);
+    padding-bottom: 20px;
+  }
   &__sidebar {
     width: 300px;
     background: $sidebar-bg;
+    min-height: calc(100vh);
+    max-height: calc(100vh);
   }
   @media all and (max-width: 1200px) {
     @include grid-template-columns(200px 1fr);
@@ -30,11 +37,12 @@
   @media all and (max-width: 920px) {
     @include display(block);
     &__sidebar {
-      width: 200px;
+      width: 0;
       position: absolute;
       z-index: 40;
       top: 75px;
       max-width: 100%;
+      overflow: hidden;
     }
   }
 }
