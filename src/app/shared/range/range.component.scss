@@ -1,0 +1,83 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.trange-container {
+  @include display(grid);
+  @include grid-template-columns(auto 1fr);
+  @include align-items(center);
+  padding: 36px 40px 0;
+  &__name {
+    @extend %roboto-bold;
+    @include text-transform(uppercase);
+    margin-right: 50px;
+  }
+}
+
+::ng-deep {
+  .mat-slider-horizontal {
+    width: 100%;
+  }
+  .mat-slider-track-background {
+    background-color: $chat-bg !important;
+  }
+  .mat-slider-horizontal .mat-slider-track-wrapper,
+  .mat-slider-horizontal .mat-slider-track-background,
+  .mat-slider-horizontal .mat-slider-wrapper {
+    height: 5px;
+    min-height: 5px;
+  }
+
+  .mat-accent .mat-slider-track-fill {
+    background: $yellow;
+  }
+  .mat-accent .mat-slider-thumb-label {
+    background: transparent;
+    width: 30px;
+    height: 20px;
+    border-radius: 0;
+    &::after {
+      content: '';
+      @include display(block);
+      @include size(10px);
+      background: $sidebar-bg !important;
+      transform: rotate(45deg);
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: 0;
+    }
+  }
+  .cdk-focused .mat-slider-thumb-label {
+    transform: translateY(0) scale(1) rotate(0deg) !important;
+    border-radius: 0 !important;
+    top: -30px !important;
+  }
+
+  .mat-slider-horizontal .mat-slider-thumb-label-text {
+    transform: rotate(0deg) !important;
+    @include display(grid);
+    @include align-items(center);
+    @include justify-content(center);
+    background: $sidebar-bg !important;
+    width: 30px;
+    height: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .mat-accent .mat-slider-thumb,
+  .mat-slider-min-value.mat-slider-thumb-label-showing .mat-slider-thumb {
+    @include display(grid);
+    @include align-items(center);
+    @include justify-content(center);
+    background: $white;
+    &::after {
+      content: '';
+      @include display(block);
+      @include size(10px);
+      @include border-radius(50%, 50%, 50%, 50%);
+      background: $sidebar-bg;
+    }
+  }
+}

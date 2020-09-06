@@ -23,5 +23,8 @@
   @include display(grid);
   @include grid-template-columns(1fr 1fr 1fr);
   grid-gap: 20px 10px;
+  @media all and (max-width: 1200px){
+    @include grid-template-columns(1fr 1fr);
+  }
 }
 

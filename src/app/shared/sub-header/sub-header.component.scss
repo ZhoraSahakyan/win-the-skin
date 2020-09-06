@@ -1,0 +1,26 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.profile-header {
+  @include display(grid);
+  @include align-items(center);
+  @include justify-content(space-evenly);
+  @include grid-template-columns(auto auto auto auto);
+  &__item {
+    &__number {
+      @extend %roboto-bold;
+      border-right: 1px solid $border-sub-header;
+    }
+    &__name, &__number {
+      padding: 0 10px;
+    }
+  }
+  @media all and (max-width: 767px) {
+    &__item {
+      &__number {
+        display: none;
+      }
+    }
+  }
+}

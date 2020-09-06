@@ -1,6 +1,58 @@
-<p>shgdfjgsdfgj</p>
-<div class="checkbox-container">
-  <input type="checkbox" class="checkbox-container__checkbox">
-  <span class="checkbox-container__viwe"></span>
-  <span>Classic game</span>
+<div class="checkbox-group"  (click)="dropdownToggleClick()">
+  <div class="text-ellipsis label">
+    <span class="checkbox-container position-relative">
+      <input type="checkbox" class="checkbox-container__checkbox position-absolute">
+      <span class="checkbox-container__viwe"></span>
+    </span>
+    <span>Classic game</span>
+  </div>
+  <button class="arrow-btn" [ngClass]="{'rotate':dropdownToggle}">
+    <img src="../../../assets/images/icons/arrow-down.png"  alt="">
+  </button>
 </div>
+
+<div class="dropdown" *ngIf="dropdownToggle">
+  <div class="checkbox-group">
+    <div class="text-ellipsis label">
+    <span class="checkbox-container position-relative">
+      <input type="checkbox" class="checkbox-container__checkbox position-absolute">
+      <span class="checkbox-container__viwe"></span>
+    </span>
+      <div>
+        <button class="play-btn">
+          <img src="../../../assets/images/icons/play.png" alt="">
+        </button>
+        <span>Classic game</span>
+      </div>
+    </div>
+  </div>
+  <div class="checkbox-group">
+    <div class="text-ellipsis label">
+    <span class="checkbox-container position-relative">
+      <input type="checkbox" class="checkbox-container__checkbox position-absolute">
+      <span class="checkbox-container__viwe"></span>
+    </span>
+      <div>
+        <button class="play-btn">
+          <img src="../../../assets/images/icons/play.png" alt="">
+        </button>
+        <span>Classic game</span>
+      </div>
+    </div>
+  </div>
+  <div class="checkbox-group">
+    <div class="text-ellipsis label">
+    <span class="checkbox-container position-relative">
+      <input type="checkbox" class="checkbox-container__checkbox position-absolute" checked>
+      <span class="checkbox-container__viwe"></span>
+    </span>
+      <div>
+        <button class="play-btn">
+          <img src="../../../assets/images/icons/play.png" alt="">
+        </button>
+        <span>Classic game</span>
+      </div>
+    </div>
+  </div>
+</div>
+

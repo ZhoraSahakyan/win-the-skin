@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dropdown-checkbox',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dropdown-checkbox.component.scss']
 })
 export class DropdownCheckboxComponent implements OnInit {
+  public dropdownToggle: boolean = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  public dropdownToggleClick(): void {
+    this.dropdownToggle = !this.dropdownToggle
+  }
 }

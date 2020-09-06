@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
 import {WithdrawPageComponent} from './withdraw-page/withdraw-page.component';
+import {SharedModule} from '../../shared/shared.module';
 
 
 const withdrawRoutes: Routes = [
@@ -13,7 +14,8 @@ const withdrawRoutes: Routes = [
   declarations: [WithdrawPageComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(withdrawRoutes)
+    RouterModule.forChild(withdrawRoutes),
+    SharedModule
   ]
 })
 export class WithdrawModule {

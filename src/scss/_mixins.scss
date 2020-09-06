@@ -52,3 +52,12 @@
     }
   }
 }
+
+
+@mixin input-style{
+  &__input {
+    @include button-style($white, $input-bg);
+    border: none;
+    padding: 15px 25px;
+  }
+}

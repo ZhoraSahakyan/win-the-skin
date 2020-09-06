@@ -1,0 +1,9 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+@import '../../../../scss/fonts';
+
+.items-container {
+  @include display(grid);
+  @include grid-template-columns(minmax(100px, 100px) repeat(auto-fill, 100px));
+  grid-gap: 10px;
+}

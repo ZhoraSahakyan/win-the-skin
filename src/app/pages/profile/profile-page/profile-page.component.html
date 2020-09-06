@@ -1,23 +1,5 @@
-<header class="sub-header">
-  <ul class="profile-header">
-    <li class="profile-header__item">
-      <span class="profile-header__item__number">916.96$  </span>
-      <span class="profile-header__item__name"> TOTAL TODAY</span>
-    </li>
-    <li class="profile-header__item">
-      <span class="profile-header__item__number">73 </span>
-      <span class="profile-header__item__name">GAMES TODAY   </span>
-    </li>
-    <li class="profile-header__item">
-      <span class="profile-header__item__number">2282.76$ </span>
-      <span class="profile-header__item__name"> BIGGEST POT </span>
-    </li>
-    <li class="profile-header__item">
-      <span class="profile-header__item__number"> 21</span>
-      <span class="profile-header__item__name">  ONLINE</span>
-    </li>
-  </ul>
-</header>
+<app-sub-header></app-sub-header>
+
 
 <div class="profile">
   <a href="" class="profile__figure">
@@ -283,8 +265,27 @@
       <header class="sub-header">
         <h2 class="settings-title">Sound settings</h2>
       </header>
-      <ul>
-        <li>
+
+      <div>
+        <app-range></app-range>
+      </div>
+      <ul class="chackbox-list">
+        <li class="chackbox-list__item">
+          <app-dropdown-checkbox></app-dropdown-checkbox>
+        </li>
+        <li class="chackbox-list__item">
+          <app-dropdown-checkbox></app-dropdown-checkbox>
+        </li>
+        <li class="chackbox-list__item">
+          <app-dropdown-checkbox></app-dropdown-checkbox>
+        </li>
+        <li class="chackbox-list__item">
+          <app-dropdown-checkbox></app-dropdown-checkbox>
+        </li>
+        <li class="chackbox-list__item">
+          <app-dropdown-checkbox></app-dropdown-checkbox>
+        </li>
+        <li class="chackbox-list__item">
           <app-dropdown-checkbox></app-dropdown-checkbox>
         </li>
       </ul>

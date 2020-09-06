@@ -2,22 +2,6 @@
 @import '../../../../scss/mixins';
 @import '../../../../scss/fonts';
 
-.profile-header {
-  @include display(grid);
-  @include align-items(center);
-  @include justify-content(space-evenly);
-  @include grid-template-columns(auto auto auto auto);
-  &__item {
-    &__number {
-      @extend %roboto-bold;
-      border-right: 1px solid $border-sub-header;
-    }
-    &__name, &__number {
-      padding: 0 10px;
-    }
-  }
-}
-
 .profile {
   @include display(grid);
   @include grid-template-columns(60px auto);
@@ -262,16 +246,22 @@
     font-size: 1rem;
     margin-right: 70px;
   }
+  @media all and(max-width: 567px) {
+    @include display(block);
+    &__label {
+      @include display(block);
+      text-align: center;
+      margin-bottom: 20px;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
 }
 
 .input-container {
   @include display(grid);
   @include grid-template-columns(1fr auto);
-  &__input {
-    @include button-style($white, $input-bg);
-    border: none;
-  }
-  &__input,
+  @include input-style;
   &__btn {
     padding: 15px 25px;
   }
@@ -281,6 +271,15 @@
     @include button-style($white, $btn);
     border: none;
   }
+  @media all and(max-width: 567px) {
+    @include display(block);
+    &__btn, &__input {
+      width: 100%;
+    }
+    &__input {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .settings-title {
@@ -289,4 +288,13 @@
   text-align: center;
   font-size: 1rem;
   font-weight: normal;
+}
+
+.chackbox-list {
+  @include display(grid);
+  @include grid-template-columns(1fr 1fr);
+  padding: 30px 40px;
+  @media all and (max-width: 567px) {
+    @include display(block);
+  }
 }
