@@ -1,0 +1,25 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.checkbox-container {
+  @include size(15px);
+  &__checkbox {
+    &:checked{
+      .checkbox-container__viwe {
+        &::after{
+          content: '';
+          @include display(block);
+          @include size(inherit);
+          background: url('../../../assets/images/icons/check.png')no-repeat;
+        }
+      }
+    }
+
+  }
+  &__viwe {
+    @include size(inherit);
+    @include display(block);
+    border: 1px solid $white;
+  }
+}

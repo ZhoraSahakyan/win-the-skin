@@ -58,7 +58,7 @@
             <p class="table__body__item">41241.98$</p>
             <p class="table__body__item">Success</p>
             <section class="table__body__slider">
-              <div  class="table__body__slider__items">
+              <div class="table__body__slider__items">
                 <div>
                   <figure class="data-intem">
                     <img class="data-intem__image" src="./assets/images/pic.png" alt="">
@@ -130,7 +130,7 @@
             <p class="table__body__item">41241.98$</p>
             <p class="table__body__item">Success</p>
             <section class="table__body__slider">
-              <div  class="table__body__slider__items">
+              <div class="table__body__slider__items">
                 <div>
                   <figure class="data-intem">
                     <img class="data-intem__image" src="./assets/images/pic.png" alt="">
@@ -202,7 +202,7 @@
             <p class="table__body__item">41241.98$</p>
             <p class="table__body__item">Success</p>
             <section class="table__body__slider">
-              <div  class="table__body__slider__items">
+              <div class="table__body__slider__items">
                 <div>
                   <figure class="data-intem">
                     <img class="data-intem__image" src="./assets/images/pic.png" alt="">
@@ -272,7 +272,23 @@
       </section>
 
     </mat-tab>
-    <mat-tab label="Settings " class="tub-container__itme"> Content 2</mat-tab>
+    <mat-tab label="Settings " class="tub-container__itme">
+      <form action="" class="trade-link">
+        <label for="trade-link" class="trade-link__label">Trade-link</label>
+        <div class="input-container">
+          <input id="trade-link" class="input-container__input" type="text" placeholder="Enter trade-link...">
+          <button class="input-container__btn">Save trade link</button>
+        </div>
+      </form>
+      <header class="sub-header">
+        <h2 class="settings-title">Sound settings</h2>
+      </header>
+      <ul>
+        <li>
+          <app-dropdown-checkbox></app-dropdown-checkbox>
+        </li>
+      </ul>
+    </mat-tab>
     <mat-tab label="Statistics" class="tub-container__itme"> Content 3</mat-tab>
   </mat-tab-group>
 </section>

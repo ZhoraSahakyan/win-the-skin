@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {MatTabsModule} from '@angular/material/tabs';
 
 import {ProfilePageComponent} from './profile-page/profile-page.component';
+import {SharedModule} from '../../shared/shared.module';
 
 const profileRoutes: Routes = [
   {path: '', component: ProfilePageComponent}
@@ -14,7 +15,8 @@ const profileRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(profileRoutes),
-    MatTabsModule
+    MatTabsModule,
+    SharedModule
   ]
 })
 export class ProfileModule {

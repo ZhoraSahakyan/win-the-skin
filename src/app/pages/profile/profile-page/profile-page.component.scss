@@ -249,3 +249,44 @@
     }
   }
 }
+
+//trade-link
+.trade-link {
+  @include display(grid);
+  @include grid-template-columns(auto 1fr);
+  @include align-items(center);
+  padding: 20px 20px 20px 40px;
+  &__label {
+    @include text-transform(uppercase);
+    @extend %roboto-bold;
+    font-size: 1rem;
+    margin-right: 70px;
+  }
+}
+
+.input-container {
+  @include display(grid);
+  @include grid-template-columns(1fr auto);
+  &__input {
+    @include button-style($white, $input-bg);
+    border: none;
+  }
+  &__input,
+  &__btn {
+    padding: 15px 25px;
+  }
+  &__btn {
+    @extend %roboto-bold;
+    @include text-transform(uppercase);
+    @include button-style($white, $btn);
+    border: none;
+  }
+}
+
+.settings-title {
+  @include text-transform(uppercase);
+  @extend %roboto-bold;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+}
