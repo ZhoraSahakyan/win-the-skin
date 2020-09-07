@@ -2,13 +2,13 @@
   <nav class="navigation-menu">
     <div class="mobile-menu">
       <button mat-button [matMenuTriggerFor]="menuToggle" class="position-relative mobile-menu__btn" data-count="10">
-        <img src="../../../assets/images/icons/icon.png" width="20" alt="">
+        Menu
       </button>
-      <mat-menu #menuToggle="matMenu" xPosition="after" class="notification-dropdown">
+      <mat-menu #menuToggle="matMenu" xPosition="after" class="notification-dropdown mobile-menu">
         <ul class="menu">
           <li class="menu__item"><a routerLink="" class="menu__item__link">ROULETTE</a></li>
           <li class="menu__item"><a routerLink="" class="menu__item__link">JACKPOTS</a></li>
-          <li class="menu__item"><a routerLink="" class="menu__item__link" routerLink="./top" routerLinkActive="active">COINFLIP</a>
+          <li class="menu__item"><a  class="menu__item__link" routerLink="./top" routerLinkActive="active">COINFLIP</a>
           </li>
           <li class="menu__item"><a routerLink="" class="menu__item__link">MYSTERY</a></li>
           <li class="menu__item"><a routerLink="" class="menu__item__link"> BOXRAFFLE</a></li>

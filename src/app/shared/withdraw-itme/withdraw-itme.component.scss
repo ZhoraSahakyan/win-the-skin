@@ -8,6 +8,7 @@
   cursor: pointer;
   &__image {
     @include size(70px,50px);
+    max-width: 100%;
     margin: 10px 0;
     object-fit: cover;
     object-position: center;

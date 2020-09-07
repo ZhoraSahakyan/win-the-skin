@@ -14,6 +14,9 @@
     }
     &__name, &__number {
       padding: 0 10px;
+      @media all and (max-width: 567px) {
+        padding: 0;
+      }
     }
   }
   @media all and (max-width: 767px) {

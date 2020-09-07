@@ -11,19 +11,26 @@
       padding: 20px;
     }
     th, td:nth-child(2),
-    td:first-child{
+    td:first-child {
       @extend %roboto-bold
     }
-    td{
+    td {
       padding: 10px 20px;
+      @media all and (max-width: 567px) {
+        padding: 10px 0;
+      }
     }
     td, th {
       border-bottom: 1px solid $white-border;
-      ::ng-deep{
-        .user__name{
+      ::ng-deep {
+        .user__name {
           color: $white;
+          @media all and (max-width: 567px) {
+            margin: 0;
+          }
         }
       }
     }
   }
+
 }

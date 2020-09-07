@@ -13,8 +13,6 @@ export class SelectBoxComponent implements OnInit {
     {id: 8, name: 'ReactJs'},
   ];
   selected = [
-    {id: 2, name: 'Node Js'},
-    {id: 8, name: 'ReactJs'}
   ];
   constructor() { }
 

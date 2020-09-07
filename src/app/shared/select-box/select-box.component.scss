@@ -4,16 +4,19 @@
 
 ::ng-deep {
   .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container,
-  .ng-select .ng-select-container {
-    background: $select-box-bg;
-    border: 1px solid $select-box-bg;
+  .ng-select .ng-select-container,
+  .ng-select.ng-select-opened>.ng-select-container,
+  .ng-dropdown-panel.ng-select-top{
+    background: rgba(0,0,0,.2);
+    border: none !important;
     border-right: 0;
+    border-radius: 0;
     &:focus {
       outline: none;
     }
   }
   .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
-    background: #344a5b;
+    background: #354b5b;
     color: $white;
     font-size: 13px;
     display: flex;

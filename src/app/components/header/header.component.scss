@@ -30,7 +30,7 @@
       }
     }
   }
-  @media all and (max-width: 992px){
+  @media all and (max-width: 992px) {
     display: none;
   }
 }
@@ -74,8 +74,28 @@
   .cdk-overlay-connected-position-bounding-box {
     right: 105px !important;
     top: 56px !important;
+    @media all  and (max-width: 992px){
+      left:0 !important;
+      width: 100% !important;
+    }
+  }
+
+  @media all and(max-width: 500px) {
+    .cdk-overlay-connected-position-bounding-box {
+      right: auto !important;
+      left: 0 !important;
+      top: 56px !important;
+      width: 100% !important;
+    }
+    .cdk-overlay-pane {
+      right: auto !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 100%;
+    }
   }
   .notification-dropdown {
+
     &.mat-menu-panel {
       @include size(300px, 270px);
       max-width: 100%;
@@ -85,6 +105,25 @@
       box-shadow: none;
       padding: 10px 0 0 0;
       overflow: hidden;
+    }
+    @media all and(max-width: 500px) {
+      &.mat-menu-panel {
+        left: 0 !important;
+        right: 0 !important;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    &.mobile-menu{
+      .mat-menu-content{
+        &::before{
+          @media all and (max-width: 992px) {
+            left: 75px;
+            right: auto;
+          }
+        }
+      }
     }
     .mat-menu-content {
       padding: 0 22px;
@@ -101,7 +140,12 @@
         top: 0;
         left: 50%;
         transform: translate(-50%, -50%);
+        @media all and (max-width: 992px) {
+          left: auto;
+          right: 100px;
+        }
       }
+
     }
     &__count, &__list__item {
       padding: 10px;
@@ -158,17 +202,17 @@
 .mobile-menu {
   display: none;
   &__btn {
-    @include button-style(transparent,transparent);
-    padding:25px 0;
+    @include button-style($white, transparent);
+    padding: 25px 10px;
   }
-  @media all and (max-width: 992px){
+  @media all and (max-width: 992px) {
     display: block;
   }
 }
 
-@media all and (max-width: 992px){
+@media all and (max-width: 992px) {
   ::ng-deep {
-    .mat-menu-content{
+    .mat-menu-content {
       .menu {
         display: block;
       }
