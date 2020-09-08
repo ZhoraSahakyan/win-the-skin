@@ -44,8 +44,10 @@
 .brand {
   @include display(grid);
   @include justify-content(center);
+  @include align-items(center);
   padding: 15.5px 0;
   background: $logo-bg;
+  height: 70px;
   &__link {
     @include size(135px, auto);
     &__image {
