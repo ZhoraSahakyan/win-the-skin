@@ -36,7 +36,7 @@
         &::after {
           content: '';
           @include display(block);
-          @include size(inherit);
+          @include size(9px,7px);
           background: url('../../../assets/images/icons/check.png') no-repeat center;
         }
       }
@@ -45,7 +45,9 @@
   }
   &__viwe {
     @include size(inherit);
-    @include display(block);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
     border: 1px solid $white;
   }
 }

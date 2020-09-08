@@ -19,10 +19,15 @@
       }
     }
   }
-  @media all and (max-width: 767px) {
+  @media all and (max-width: 566px) {
     &__item {
-      &__number {
-        display: none;
+      &__number,
+      &__number{
+       @include display(block);
+        text-align: center;
+      }
+      &__number{
+        border:none;
       }
     }
   }

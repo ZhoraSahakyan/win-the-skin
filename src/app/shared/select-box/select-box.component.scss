@@ -15,6 +15,9 @@
       outline: none;
     }
   }
+  .ng-select .ng-select-container .ng-value-container .ng-input>input{
+    color: $white;
+  }
   .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
     background: #354b5b;
     color: $white;

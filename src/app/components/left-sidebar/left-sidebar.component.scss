@@ -30,11 +30,11 @@
     width: 0;
     position: absolute;
     z-index: 40;
-    top: 65px;
+    top: 70px;
     transition: all .3s;
     overflow: hidden;
-    min-height: calc(100vh - 65px);
-    max-height: calc(100vh - 65px);
+    min-height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
     &.open {
       width: 280px;
     }
