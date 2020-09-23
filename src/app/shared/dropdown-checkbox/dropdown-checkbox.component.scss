@@ -1,0 +1,82 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.checkbox-group {
+  @include display(grid);
+  @include grid-template-columns(auto 10px);
+  @include align-items(center);
+  @include text-transform(uppercase);
+  margin-bottom: 20px;
+  max-width: 200px;
+  margin-right: 20px;
+}
+
+.label {
+  @include display(grid);
+  @include grid-template-columns(35px auto);
+  @include align-items(center);
+  @include text-transform(uppercase);
+  cursor: pointer;
+  span {
+    vertical-align: middle;
+  }
+}
+
+.checkbox-container {
+  @include size(15px);
+  margin-right: 20px;
+  &__checkbox {
+    @include size(100%);
+    font-size: 100px;
+    opacity: 0;
+    cursor: pointer;
+    &:checked {
+      + .checkbox-container__viwe {
+        &::after {
+          content: '';
+          @include display(block);
+          @include size(9px,7px);
+          background: url('../../../assets/images/icons/check.png') no-repeat center;
+        }
+      }
+    }
+
+  }
+  &__viwe {
+    @include size(inherit);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    border: 1px solid $white;
+  }
+}
+
+.arrow-btn {
+  @include size(10px);
+  @include button-style(transparent, transparent, transparent);
+  border: none;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  img {
+    transform: rotate(180deg);
+  }
+}
+
+.play-btn {
+  @include button-style(transparent, transparent, transparent);
+  margin-right: 10px;
+  border: none;
+  img {
+    @include size(auto, 10px);
+  }
+}
+
+.dropdown {
+  padding: 0 35px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

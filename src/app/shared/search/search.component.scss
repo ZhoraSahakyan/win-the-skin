@@ -1,0 +1,18 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.search {
+  @include input-style;
+  margin:20px 0 15px;
+  &__input {
+    width: 100%;
+    padding-right: 30px;
+  }
+  &__btn {
+    @include button-style(transparent, transparent);
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

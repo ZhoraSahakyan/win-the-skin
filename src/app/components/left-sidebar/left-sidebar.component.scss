@@ -1,0 +1,183 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.mobile-menu {
+  @include display(none);
+  @include button-style($white, transparent);
+  top: 20px;
+  left: 15px;
+  img {
+    width: 25px;
+  }
+  @media all and (max-width: 992px) {
+    @include display(block);
+  }
+}
+
+.sidebar-menu {
+  width: 300px;
+  background: $sidebar-bg;
+  min-height: calc(100vh);
+  max-height: calc(100vh);
+  @media all and (max-width: 1500px) {
+    width: 250px;
+  }
+  @media all and (max-width: 1300px) {
+    width: 200px;
+  }
+  @media all and (max-width: 992px) {
+    width: 0;
+    position: absolute;
+    z-index: 40;
+    top: 70px;
+    transition: all .3s;
+    overflow: hidden;
+    min-height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+    &.open {
+      width: 280px;
+    }
+  }
+}
+
+.brand {
+  @include display(grid);
+  @include justify-content(center);
+  @include align-items(center);
+  padding: 15.5px 0;
+  background: $logo-bg;
+  height: 70px;
+  &__link {
+    @include size(135px, auto);
+    &__image {
+      @include size(inherit, auto)
+    }
+  }
+  @media all and (max-width: 1400px) {
+    padding: 15px 0;
+  }
+}
+
+.scroll {
+  min-height: calc(100vh - 65.200px);
+  max-height: calc(100vh - 65.200px);
+  padding-bottom: 20px;
+}
+
+.navigation {
+  &__item {
+    padding: 0 20px;
+    &:first-of-type {
+      background: $white-opacity;
+    }
+    &:not(:last-child) {
+      .navigation__item__link {
+        border-bottom: 1px solid $white-border;
+      }
+    }
+    &__title, &__link {
+      @extend %roboto-bold;
+      padding: 15px;
+      @include text-transform(uppercase);
+      font-size: 1rem;
+    }
+    &__link {
+      @include display(grid);
+      @include grid-template-columns(40px auto);
+      @include align-items(center);
+      color: $sidebar-text;
+      white-space: nowrap;
+      &:hover, &.active {
+        color: $yellow;
+        background: $aside-item-hover;
+      }
+      &::before {
+        @include size(20px);
+        @include display(grid);
+        content: '';
+        background-size: 20px auto;
+      }
+      &.play {
+        &::before {
+          background: url('../../../assets/images/icons/play.png') no-repeat;
+        }
+        &:hover, &.active {
+          &::before {
+            background: url('../../../assets/images/icons/play-hover.png') no-repeat;
+          }
+        }
+      }
+      &.history {
+        &::before {
+          background: url('../../../assets/images/icons/history.png') no-repeat;
+        }
+        &:hover, &.active {
+          &::before {
+            background: url('../../../assets/images/icons/history-hover.png') no-repeat;
+          }
+        }
+      }
+      &.shop {
+        &::before {
+          background: url('../../../assets/images/icons/shop.png') no-repeat;
+        }
+        &:hover, &.active {
+          &::before {
+            background: url('../../../assets/images/icons/shop-hover.png') no-repeat;
+          }
+        }
+      }
+      &.support {
+        &::before {
+          background: url('../../../assets/images/icons/play.png') no-repeat;
+        }
+        &:hover, &.active {
+          &::before {
+            background: url('../../../assets/images/icons/play-hover.png') no-repeat;
+          }
+        }
+      }
+      &.about {
+        &::before {
+          background: url('../../../assets/images/icons/about.png') no-repeat;
+        }
+        &:hover, &.active {
+          &::before {
+            background: url('../../../assets/images/icons/about-hover.png') no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+//balance
+.balance {
+  @include display(grid);
+  @include grid-template-columns(auto auto);
+  @include align-items(center);
+  @include justify-content(space-between);
+  background: $balance-bg;
+  padding: 10px 20px;
+  &__title {
+    @include text-transform(uppercase);
+    @extend %roboto-light;
+    font-weight: lighter;
+    font-size: 1rem;
+    margin: 0;
+    &__price {
+      @extend %roboto-bold;
+    }
+  }
+  &__buttons {
+    &__item {
+      @include button-style(transparent, transparent);
+      vertical-align: middle;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+      line-height: 1;
+    }
+  }
+}

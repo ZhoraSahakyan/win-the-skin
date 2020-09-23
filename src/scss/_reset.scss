@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+html, body {
+  @extend %roboto-light;
+  height: 100vh;
+  color: $white;
+  font-size: $core-fz;
+  overflow: hidden;
+  @media all and (max-width: 1400px) {
+    font-size: $small-fz;
+  }
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+//text elipsis
+.text-ellipsis {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sub-header {
+  background: $aside-item-hover;
+  padding: 15px;
+}
+
+
+
+.select-container {
+  background: $select-bg;
+  margin-bottom: 20px;
+  &__header {
+    @extend %roboto-bold;
+    background: $select-header;
+    padding: 20px 25px;
+  }
+}
+
+.select {
+  padding: 15px 25px;
+}

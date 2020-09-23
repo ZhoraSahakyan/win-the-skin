@@ -1,0 +1,26 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.filters-container {
+  width: 100%;
+  @media all and (max-width: 567px) {
+    width: 100%;
+  }
+}
+
+.clear {
+  @include display(grid);
+  @include align-items(center);
+  @include justify-content(center);
+  @include grid-template-columns(auto auto);
+  @extend %roboto-bold;
+  @include button-style($white, $red);
+  @include text-transform(uppercase);
+  border: none;
+  padding: 15px;
+  width: 100%;
+  img{
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.withdraw-item {
+  background: $withdraw-item-bg;
+  text-align: center;
+  cursor: pointer;
+  &__image {
+    @include size(70px,50px);
+    max-width: 100%;
+    margin: 10px 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__price {
+    @extend %roboto-bold;
+    color: $yellow;
+    background: $withdraw-price-bg;
+    padding: 5px 10px;
+  }
+  &.active {
+    border: 1px solid #307ba9;
+    background: $withdraw-item-active-bg;
+  }
+  &:hover{
+    .tooltip-container {
+      @include display(block);
+    }
+  }
+}
+
+.tooltip-container {
+  @include display(none);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-130%);
+}

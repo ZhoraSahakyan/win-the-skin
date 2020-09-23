@@ -1,0 +1,222 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.header-container {
+  background-image: $header-gradient;
+  padding: 0 22px 0 44px;
+  height: 70px;
+}
+
+.navigation-menu {
+  @include display(grid);
+  @include grid-template-columns(1fr 1fr);
+  @include align-items(center);
+}
+
+.menu {
+  @include display(grid);
+  @include grid-template-columns(auto auto auto auto auto auto);
+  @include justify-content(start);
+  &__item {
+    &__link {
+      @include display(block);
+      padding: 25px;
+      @extend %roboto-bold;
+      @include text-transform(uppercase);
+      color: $header-text;
+      &:hover, &.active {
+        color: $yellow;
+        background: $menu-item-hover;
+      }
+    }
+  }
+  @media all and (max-width: 992px) {
+    display: none;
+  }
+}
+
+.profile {
+  @include display(grid);
+  @include justify-content(end);
+  @include align-items(center);
+  @include grid-template-columns(auto auto auto)
+}
+
+.notification {
+  @include size(35px);
+  @include button-style(transparent, transparent);
+  background: url('../../../assets/images/icons/bell.png') no-repeat;
+  background-size: 35px auto;
+  cursor: pointer;
+  &:hover, &[aria-expanded="true"] {
+    background: url('../../../assets/images/icons/bell-hover.png') no-repeat;
+    background-size: 35px auto;
+  }
+  &::after {
+    @include border-radius(50%, 50%, 50%, 50%);
+    @include size(18px);
+    content: attr(data-count);
+    @include display(grid);
+    @include align-items(center);
+    @include justify-content(center);
+    background: $red;
+    color: $white;
+    font-size: 0.8rem;
+    border: 2px solid $blue;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(50%);
+  }
+}
+
+::ng-deep {
+  .cdk-overlay-connected-position-bounding-box {
+    right: 105px !important;
+    top: 56px !important;
+    @media all  and (max-width: 992px){
+      left:0 !important;
+      width: 100% !important;
+    }
+  }
+
+  @media all and(max-width: 500px) {
+    .cdk-overlay-connected-position-bounding-box {
+      right: auto !important;
+      left: 0 !important;
+      top: 56px !important;
+      width: 100% !important;
+    }
+    .cdk-overlay-pane {
+      right: auto !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 100%;
+    }
+  }
+  .notification-dropdown {
+
+    &.mat-menu-panel {
+      @include size(300px, 270px);
+      max-width: 100%;
+      max-height: 80vh;
+      @include border-radius();
+      background: transparent;
+      box-shadow: none;
+      padding: 10px 0 0 0;
+      overflow: hidden;
+    }
+    @media all and(max-width: 500px) {
+      &.mat-menu-panel {
+        left: 0 !important;
+        right: 0 !important;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    &.mobile-menu{
+      .mat-menu-content{
+        &::before{
+          @media all and (max-width: 992px) {
+            left: 75px;
+            right: auto;
+          }
+        }
+      }
+    }
+    .mat-menu-content {
+      padding: 0 22px;
+      background: $dropdown-bg;
+      height: 100%;
+      position: relative;
+      &::before {
+        @include display(block);
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid $dropdown-bg;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @media all and (max-width: 992px) {
+          left: auto;
+          right: 100px;
+        }
+      }
+
+    }
+    &__count, &__list__item {
+      padding: 10px;
+      margin: 0;
+    }
+    &__list {
+      overflow: hidden;
+      &__item {
+        @include display(grid);
+        @include grid-template-columns(20px 1fr);
+        border-top: 1px solid $white-border;
+        &::before {
+          @include size(14px, auto);
+          content: '';
+          background-position: center;
+          background-size: 14px auto;
+          background-repeat: no-repeat;
+        }
+        &.success {
+          &::before {
+            background: url('../../../assets/images/icons/3.png') no-repeat;
+          }
+        }
+        &.error {
+          &::before {
+            background: url('../../../assets/images/icons/1.png') no-repeat;
+          }
+        }
+        &.pending {
+          &::before {
+            background: url('../../../assets/images/icons/2.png') no-repeat;
+          }
+        }
+        &.blue {
+          &::before {
+            background: url('../../../assets/images/icons/4.png') no-repeat;
+          }
+        }
+      }
+    }
+    &__title {
+      color: $red;
+      text-align: center;
+      margin: 22px 0;
+      text-shadow: 2px 2px 50px $red;
+    }
+  }
+}
+
+.exit {
+  @include display(block);
+}
+
+.mobile-menu {
+  display: none;
+  &__btn {
+    @include button-style($white, transparent);
+    padding: 25px 10px;
+  }
+  @media all and (max-width: 992px) {
+    display: block;
+  }
+}
+
+@media all and (max-width: 992px) {
+  ::ng-deep {
+    .mat-menu-content {
+      .menu {
+        display: block;
+      }
+    }
+  }
+}

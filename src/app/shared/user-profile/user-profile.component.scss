@@ -1,0 +1,35 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+@import '../../../scss/fonts';
+
+.user {
+  @include display(grid);
+  @include grid-template-columns(40px auto);
+  @include align-items(center);
+  @include justify-content(center);
+  margin: 0 15px;
+  &__image {
+    @include size(40px);
+    background: $white-border;
+    img {
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+  &__name {
+    color: $header-text;
+    margin-left: 15px;
+  }
+  @media all and (max-width: 1200px) {
+    &__image {
+      @include size(35px);
+      img {
+        object-position: center;
+        object-fit: cover;
+      }
+    }
+    &__name {
+      display: none;
+    }
+  }
+}
